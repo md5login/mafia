@@ -1,6 +1,6 @@
 {
   "name": "mafia",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Mafia Game",
   "main": "server.js",
   "dependencies": {
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/md5login/mafia.git"
   },
-  "author": "",
+  "author": "Michael and Yochai",
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/md5login/mafia/issues"

@@ -86,17 +86,115 @@
 			float: right;
 			margin-top: 100px;
 		}
+
+		#TabsContainer{
+			display: none;
+			width: 100%;
+			float: right;
+		}
+
+		.tab{
+			width: 250px;
+			height: 350px;
+			border: 1px solid #ccc;
+			border-radius: 2px;
+			margin: 20px 30px;
+			float: right;
+			box-shadow: 0 2px 5px #ccc;
+			overflow: hidden;
+		}
+
+		.tab-header{
+			width: 100%;
+			float: right;
+			height: 30px;
+			border-radius: 2px;
+			text-align: center;
+			line-height: 30px;
+			border-bottom: 1px solid #ededed;
+			background: #e9e9e9;
+		}
+
+		.tab-body{
+			width: 100%;
+			float: right;
+			height: 300px;
+			border-radius: 2px;
+			text-align: center;
+		}
+
+		.tab-body p{
+			line-height: 26px;
+			height: 26px;
+		}
+
+		.tab-footer{
+			width: 100%;
+			float: right;
+			height: 20px;
+			border-radius: 2px;
+			background: #ededed;
+		}
+
+		.tab-footer-info{
+			float: right;
+			width: 50%;
+			font-size: 12px;
+			text-align: center;
+			height: 20px;
+			line-height: 20px;
+		}
+
+		#NewRoom .tab-body{
+			font-size: 128px;
+			line-height: 300px;
+		}
+
 	</style>
+	<script src="https://cdn.socket.io/socket.io-1.0.4.js"></script>
+	<script>
+		var socket = window.io && io();
+	</script>
+	<script src="client/communicator.js"></script>
+	<script src="client/main.js"></script>
 </head>
 <body>
 
 	<div id="LoginRequest">
 		<label for="UserName">שם:</label>
 		<input type="text" id="UserName" />
-		<button>סע</button>
+		<button onclick="Mafia.users.create();">סע</button>
 	</div>
 
 	<h1 id="WelcomeHeader">ברוכים הבאים למאפיה</h1>
+
+	<div id="TabsContainer">
+		<div class="tab">
+			<header class="tab-header">חדר: מאפיה</header>
+			<div class="tab-body">
+				<p>יוחאי</p>
+				<p>טלי</p>
+				<p>זאור</p>
+				<p>ניר</p>
+				<p>מיכאל</p>
+			</div>
+			<footer class="tab-footer">
+				<div class="tab-footer-info">התחלה: 02:18</div>
+				<div class="tab-footer-info">מקום פנוי: 8</div>
+			</footer>
+		</div>
+		<div id="NewRoom" class="tab">
+			<header class="tab-header">New Room</header>
+			<div class="tab-body">
+				+
+			</div>
+			<footer class="tab-footer">
+				<div class="tab-footer-info">Create</div>
+				<div class="tab-footer-info">New</div>
+			</footer>
+		</div>
+	</div>
+
 	<div id="MainContainer">
 
 	</div>
